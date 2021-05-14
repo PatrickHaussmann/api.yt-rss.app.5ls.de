@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/feed/:channelId", "destination": "/api/feed" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=3600, s-maxage=3600, stale-while-revalidate=21600"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://yt-rss.app.5ls.de"
+        }
+      ]
+    }
+  ]
+}
